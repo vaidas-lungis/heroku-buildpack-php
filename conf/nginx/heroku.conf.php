@@ -28,6 +28,7 @@ http {
     }
 
     limit_req_zone  $binary_remote_addr  zone=one:10m   rate=500r/m;
+    limit_req_status 429
     
     server {
         # define an easy to reference name that can be used in try_files

@@ -26,6 +26,8 @@ http {
         server unix:/tmp/heroku.fcgi.<?=getenv('PORT')?:'8080'?>.sock max_fails=3 fail_timeout=3s;
         keepalive 16;
     }
+
+    limit_req_zone  $binary_remote_addr  zone=one:10m   rate=500r/m;
     
     server {
         # define an easy to reference name that can be used in try_files

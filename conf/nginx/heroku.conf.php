@@ -27,7 +27,7 @@ http {
         keepalive 16;
     }
 
-    limit_req_zone  $binary_remote_addr  zone=one:10m   rate=500r/m;
+    limit_req_zone  $binary_remote_addr  zone=one:10m   rate=300r/m;
     limit_req_status 429;
     
     server {
